@@ -1,0 +1,26 @@
+videos.js 추가
+home.js 추가
+code.js 추가
+link.js 추가
+category.js -> tag.js 로 변경
+
+sanity install url-metadata-input 설치
+npm i yarn -g 설치
+yarn add react-ace 설치
+
+*[_type == "post"]{title,subtitle,createAt,"content":content[]{...,...select(_type == "imageGallery" => {"images":images[]{...,"url":asset -> url}})},
+"slug":slug.current,
+"thumbnail":{
+  "alt":thumbnail.alt,
+  "imageUrl":thumbnail.asset -> url
+},
+"author":author -> {
+  name,
+  role,
+  "image" : image.asset -> url
+},
+"tag":tag -> {
+  title,
+  "slug" : slug.current
+}
+}
